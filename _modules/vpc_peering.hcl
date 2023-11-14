@@ -1,10 +1,10 @@
 terraform {
-  source = "${local.base_source_url}?ref=v0.26.8"
+  source = "${local.base_source_url}?version=1.0.0"
 }
 
 locals {
-  base_source_url = "git::git@github.com:gruntwork-io/terraform-aws-vpc.git//modules/vpc-peering"
-    
+  base_source_url = "tfr:///cloudposse/vpc-peering/aws"
+
   account_vars     = read_terragrunt_config(find_in_parent_folders("account.hcl"))
   region_vars      = read_terragrunt_config(find_in_parent_folders("region.hcl"))
   environment_vars = read_terragrunt_config(find_in_parent_folders("env.hcl"))
@@ -17,9 +17,8 @@ locals {
 }
 
 inputs = {
-  aws_account_id = local.account_vars.locals.aws_account_id
-  allow_remote_vpc_dns_resolution = true
-  auto_accept = true
-  create_resources = true
-  custom_tags = local.tags_all
+  auto_accept                               = true
+  requestor_allow_remote_vpc_dns_resolution = true
+  acceptor_allow_remote_vpc_dns_resolruntution  = true
+  tags = local.tags_all
 }
