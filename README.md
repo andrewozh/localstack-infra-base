@@ -30,6 +30,12 @@ terragrunt init
 terragrunt apply
 cd -
 
+cd localstack/us-east-1/common/vpc_peering_dev
+rm -rf .terraform.lock.hcl .terragrunt-cache
+terragrunt init
+terragrunt apply
+cd -
+
 docker-compose stop
 ```
 
@@ -84,4 +90,5 @@ Remote state S3 bucket terragrunt-localstack-us-east-1 is out of date. Would you
 ### vpc
 
 * using `terraform-aws-modules/vpc/aws` because it's awesome
-* how to get rid of this domb way to fetch data for module input?
+* how to get rid of this dumb way to fetch data for module input?
+* check vpc peering on both sides
