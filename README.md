@@ -5,37 +5,7 @@ Using `Terragrunt` to provision infra on `localstack`
 ```
 docker-compose up -d
 ./init-s3-backend.sh
-
-cd localstack/us-east-1/common/_data
-rm -rf .terraform.lock.hcl .terragrunt-cache
-terragrunt init
-terragrunt apply
-cd -
-
-cd localstack/us-east-1/common/vpc
-rm -rf .terraform.lock.hcl .terragrunt-cache
-terragrunt init
-terragrunt apply
-cd -
-
-cd localstack/us-east-1/dev/_data
-rm -rf .terraform.lock.hcl .terragrunt-cache
-terragrunt init
-terragrunt apply
-cd -
-
-cd localstack/us-east-1/dev/vpc
-rm -rf .terraform.lock.hcl .terragrunt-cache
-terragrunt init
-terragrunt apply
-cd -
-
-cd localstack/us-east-1/common/vpc_peering_dev
-rm -rf .terraform.lock.hcl .terragrunt-cache
-terragrunt init
-terragrunt apply
-cd -
-
+./terragrunt-apply-all.sh
 docker-compose stop
 ```
 
@@ -92,3 +62,23 @@ Remote state S3 bucket terragrunt-localstack-us-east-1 is out of date. Would you
 * using `terraform-aws-modules/vpc/aws` because it's awesome
 * how to get rid of this dumb way to fetch data for module input?
 * check vpc peering on both sides
+
+### iam
+
+### EKS
+
+* Operator Lifecycle Manager
+* external-secrets
+* external-dns
+* cluster-autoscaler 
+* argocd
+* terraform operator
+
+### databases
+
+* postgres
+* redis
+* mongodb
+* clickhouse
+
+## example microservice app
