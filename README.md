@@ -65,8 +65,9 @@ Remote state S3 bucket terragrunt-localstack-us-east-1 is out of date. Would you
 
 ### iam
 
-### EKS
+### eks
 
+* kms key ✅
 * Operator Lifecycle Manager
 * external-secrets
 * external-dns

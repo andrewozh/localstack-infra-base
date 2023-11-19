@@ -38,3 +38,5 @@ terragrunt_reapply localstack/us-east-1/common/vpc
 terragrunt_reapply localstack/us-east-1/dev/_data
 terragrunt_reapply localstack/us-east-1/dev/vpc
 terragrunt_reapply localstack/us-east-1/common/vpc_peering_dev
+terragrunt_reapply localstack/us-east-1/common/kms_eks
+terragrunt_reapply localstack/us-east-1/dev/kms_eks
