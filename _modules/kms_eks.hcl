@@ -13,7 +13,7 @@ locals {
   region  = local.region_vars.locals.aws_region
   env     = local.environment_vars.locals.environment
 
-  cluster_name = "eks-${local.account}-${local.region}-${local.env}"
+  cluster_name = "eks-${local.env}"
 
   tags_all = merge(
    local.account_vars.locals.tags,
