@@ -1,4 +1,4 @@
-# localstack-infra-base
+# localstack-terragrunt
 
 Using `Terragrunt` to provision infra on `localstack`
 
@@ -63,8 +63,6 @@ Remote state S3 bucket terragrunt-localstack-us-east-1 is out of date. Would you
 * how to get rid of this dumb way to fetch data for module input?
 * check vpc peering on both sides
 
-### iam
-
 ### eks
 
 * kms key ✅
@@ -75,11 +73,4 @@ Remote state S3 bucket terragrunt-localstack-us-east-1 is out of date. Would you
 * argocd
 * terraform operator
 
-### databases
-
-* postgres
-* redis
-* mongodb
-* clickhouse
-
-## example microservice app
+EKS is localstack pro feature...
